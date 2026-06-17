@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fayçal Touti, PhD &middot; Chemist &amp; Discovery Leader</title>
+<meta name="description" content="Fayçal (Fay) Touti is a Boston-area chemist and discovery leader specializing in oligonucleotide chemistry, conjugation chemistry, and peptide therapeutics. Senior Director, Asset Discovery at Apellis Pharmaceuticals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#edefeb;
+    --paper-soft:#f3f5f1;
+    --card:#f8faf6;
+    --ink:#15242a;
+    --ink-2:#33464d;
+    --muted:#6a787e;
+    --line:#d6dbd4;
+    --line-soft:#e2e6df;
+    --teal:#0c8d7e;
+    --teal-deep:#0a6c61;
+    --teal-soft:#39b2a2;
+    --copper:#b0743a;
+    --glow:rgba(57,178,162,.16);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+
+  ::selection{background:var(--teal);color:#fff}
+
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{
+    outline:2px solid var(--teal);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:1060px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---- shared type ---- */
+  .serif{font-family:"Newsreader",Georgia,serif}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.72rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--teal-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:.7em;
+  }
+
+  /* ---- the connective "linker" rail that threads sections ---- */
+  .flow{position:relative}
+  .flow::before{
+    content:"";
+    position:absolute;
+    left:11px;
+    top:14px;
+    bottom:0;
+    width:1px;
+    background:linear-gradient(var(--line),var(--line-soft) 70%,transparent);
+  }
+  section{position:relative;padding:74px 0}
+  section .wrap{position:relative}
+  .node-label{position:relative;padding-left:38px;margin-bottom:30px}
+  .node-label::before{
+    content:"";
+    position:absolute;
+    left:5px;top:.32em;
+    width:13px;height:13px;
+    border-radius:50%;
+    background:var(--paper);
+    border:1.5px solid var(--teal);
+    box-shadow:0 0 0 4px var(--paper);
+  }
+  .node-label::after{
+    content:"";
+    position:absolute;
+    left:10px;top:.5em;
+    width:3px;height:3px;border-radius:50%;
+    background:var(--copper);
+  }
+
+  /* ============ HERO ============ */
+  header.hero{
+    position:relative;
+    padding:88px 0 64px;
+    overflow:hidden;
+  }
+  .hero-glow{
+    position:absolute;
+    right:-180px;top:-120px;
+    width:640px;height:640px;
+    background:radial-gradient(circle,var(--glow),transparent 62%);
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero-grid{
+    position:relative;z-index:1;
+    display:grid;
+    grid-template-columns:1.35fr .9fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero-copy{max-width:600px}
+  .hero h1{
+    font-family:"Newsreader",serif;
+    font-weight:500;
+    font-size:clamp(3rem,7.4vw,5.6rem);
+    line-height:.98;
+    letter-spacing:-.015em;
+    margin:.32em 0 .28em;
+  }
+  .hero h1 .acc{font-style:italic;color:var(--teal-deep)}
+  .lede{
+    font-size:clamp(1.05rem,1.7vw,1.24rem);
+    color:var(--ink-2);
+    max-width:34ch;
+    line-height:1.5;
+  }
+  .chips{
+    display:flex;flex-wrap:wrap;gap:9px;
+    margin-top:30px;
+  }
+  .chip{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.74rem;
+    letter-spacing:.02em;
+    padding:7px 13px;
+    border:1px solid var(--line);
+    border-radius:100px;
+    background:rgba(255,255,255,.45);
+    color:var(--ink-2);
+  }
+  .hero-art{position:relative;display:flex;justify-content:center}
+  .conjugate{width:100%;max-width:330px;height:auto;overflow:visible}
+
+  /* ============ METRICS ============ */
+  .metrics{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .metric{
+    padding:30px 26px;
+    border-right:1px solid var(--line-soft);
+  }
+  .metric:last-child{border-right:none}
+  .metric .num{
+    font-family:"Newsreader",serif;
+    font-weight:500;
+    font-size:clamp(2.1rem,4vw,3.1rem);
+    line-height:1;
+    color:var(--ink);
+    display:block;
+  }
+  .metric .num .small{font-size:.42em;color:var(--teal-deep);vertical-align:.55em;margin-left:.1em}
+  .metric .cap{
+    margin-top:11px;
+    font-size:.82rem;
+    color:var(--muted);
+    line-height:1.45;
+  }
+
+  /* ============ ABOUT ============ */
+  .about-body{max-width:660px;padding-left:38px}
+  .about-body p{
+    font-size:1.08rem;
+    color:var(--ink-2);
+    margin-bottom:1.05em;
+  }
+  .about-body p:first-child{
+    font-family:"Newsreader",serif;
+    font-size:clamp(1.3rem,2.3vw,1.7rem);
+    line-height:1.4;
+    color:var(--ink);
+  }
+  .about-body strong{color:var(--ink);font-weight:600}
+
+  /* ============ EXPERTISE ============ */
+  .grid-exp{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .exp{
+    background:var(--card);
+    padding:28px 26px 32px;
+    transition:background .35s ease;
+  }
+  .exp:hover{background:#fff}
+  .exp .ix{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.72rem;
+    color:var(--teal);
+    letter-spacing:.1em;
+  }
+  .exp h3{
+    font-family:"Newsreader",serif;
+    font-weight:500;
+    font-size:1.32rem;
+    margin:14px 0 9px;
+    letter-spacing:-.01em;
+  }
+  .exp p{font-size:.93rem;color:var(--muted);line-height:1.5}
+
+  /* ============ TIMELINE ============ */
+  .tl{max-width:760px;padding-left:38px;list-style:none}
+  .tl li{
+    position:relative;
+    padding:22px 0 24px 30px;
+    border-top:1px solid var(--line-soft);
+  }
+  .tl li:first-child{border-top:none}
+  .tl li::before{
+    content:"";
+    position:absolute;
+    left:0;top:28px;
+    width:9px;height:9px;border-radius:50%;
+    background:var(--paper);
+    border:1.5px solid var(--teal);
+  }
+  .tl li.now::before{background:var(--teal);box-shadow:0 0 0 4px var(--glow)}
+  .tl .era{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--copper);
+    display:block;margin-bottom:5px;
+  }
+  .tl .org{
+    font-family:"Newsreader",serif;
+    font-weight:500;font-size:1.35rem;letter-spacing:-.01em;
+  }
+  .tl .role{color:var(--ink-2);font-size:.95rem;font-weight:500;margin-top:2px}
+  .tl .note{color:var(--muted);font-size:.9rem;margin-top:7px;max-width:60ch}
+
+  /* ============ PUBLICATIONS ============ */
+  .pubs{max-width:780px;padding-left:38px;list-style:none}
+  .pub{
+    display:block;
+    padding:22px 22px 22px 0;
+    border-top:1px solid var(--line-soft);
+    transition:padding-left .3s ease;
+  }
+  .pub:first-child{border-top:none}
+  .pub:hover{padding-left:10px}
+  .pub .venue{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--teal-deep);
+  }
+  .pub .ttl{
+    font-family:"Newsreader",serif;
+    font-size:1.2rem;line-height:1.32;color:var(--ink);
+    margin:7px 0 8px;display:block;
+  }
+  .pub:hover .ttl{color:var(--teal-deep)}
+  .pub .meta{font-size:.85rem;color:var(--muted)}
+  .pub .tag{
+    display:inline-block;margin-left:8px;
+    font-family:"IBM Plex Mono",monospace;font-size:.66rem;
+    letter-spacing:.05em;color:var(--copper);
+    border:1px solid var(--line);border-radius:100px;padding:2px 9px;
+    vertical-align:1px;
+  }
+  .pub .arrow{color:var(--teal);opacity:0;transition:opacity .3s ease}
+  .pub:hover .arrow{opacity:1}
+
+  .recog{
+    margin-top:34px;padding-left:38px;
+    display:flex;flex-wrap:wrap;gap:10px 26px;
+    max-width:780px;
+  }
+  .recog span{
+    font-size:.88rem;color:var(--ink-2);
+    display:flex;gap:9px;align-items:baseline;
+  }
+  .recog span::before{content:"+";color:var(--copper);font-family:"IBM Plex Mono",monospace}
+
+  /* ============ CONTACT ============ */
+  .contact{
+    background:var(--ink);
+    color:#e8efec;
+    border-radius:20px;
+    padding:clamp(40px,6vw,72px);
+    position:relative;overflow:hidden;
+  }
+  .contact .c-glow{
+    position:absolute;left:-140px;bottom:-160px;
+    width:480px;height:480px;
+    background:radial-gradient(circle,rgba(57,178,162,.22),transparent 60%);
+  }
+  .contact-inner{position:relative;z-index:1}
+  .contact .eyebrow{color:var(--teal-soft)}
+  .contact h2{
+    font-family:"Newsreader",serif;font-weight:500;
+    font-size:clamp(2rem,4.4vw,3.1rem);
+    line-height:1.04;letter-spacing:-.015em;
+    margin:.4em 0 .5em;
+    max-width:16ch;
+  }
+  .contact h2 em{color:var(--teal-soft);font-style:italic}
+  .contact p{color:#aebdb8;max-width:48ch;margin-bottom:34px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.82rem;letter-spacing:.04em;
+    padding:14px 26px;border-radius:100px;
+    display:inline-flex;align-items:center;gap:9px;
+    transition:transform .2s ease,background .2s ease,color .2s ease;
+  }
+  .btn-primary{background:var(--teal-soft);color:#06241f;font-weight:500}
+  .btn-primary:hover{background:#56c8b8;transform:translateY(-2px)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.26);color:#d9e6e1}
+  .btn-ghost:hover{border-color:var(--teal-soft);color:#fff;transform:translateY(-2px)}
+
+  /* ============ FOOTER ============ */
+  footer{padding:46px 0 60px}
+  .foot{
+    display:flex;justify-content:space-between;align-items:baseline;
+    flex-wrap:wrap;gap:14px;
+    border-top:1px solid var(--line);padding-top:26px;
+  }
+  .foot .nm{font-family:"Newsreader",serif;font-size:1.15rem}
+  .foot .loc{font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+
+  /* ---- reveal animation ---- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}.d4{transition-delay:.24s}
+
+  /* hero load sequence */
+  .h-line{opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  .he1{animation-delay:.05s}.he2{animation-delay:.18s}.he3{animation-delay:.32s}.he4{animation-delay:.46s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .hero-art{opacity:0;animation:artIn 1.1s cubic-bezier(.2,.7,.2,1) .35s forwards}
+  @keyframes artIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:none}}
+
+  #linker{stroke-dasharray:80;stroke-dashoffset:80;animation:draw 1s ease .9s forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  #pulse{transform-origin:200px 250px;animation:pulse 3.4s ease-in-out 1.8s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.5);opacity:0}}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:30px}
+    .hero-art{order:-1;justify-content:flex-start;animation-delay:.1s}
+    .conjugate{max-width:230px}
+    .metrics{grid-template-columns:1fr 1fr}
+    .metric:nth-child(2){border-right:none}
+    .metric:nth-child(1),.metric:nth-child(2){border-bottom:1px solid var(--line-soft)}
+    .grid-exp{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 20px}
+    section{padding:56px 0}
+    .flow::before{display:none}
+    .about-body,.tl,.pubs,.recog{padding-left:0}
+    .node-label{padding-left:24px}
+    .node-label::before{left:0}
+    .node-label::after{left:5px}
+    .grid-exp{grid-template-columns:1fr}
+    .metrics{grid-template-columns:1fr}
+    .metric{border-right:none;border-bottom:1px solid var(--line-soft)}
+    .metric:last-child{border-bottom:none}
+    .foot{flex-direction:column}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    .h-line,.hero-art{opacity:1;transform:none}
+    #linker{stroke-dashoffset:0}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow h-line he1">Senior Director &middot; Asset Discovery &middot; Apellis</span>
+        <h1 class="h-line he2">Fay&ccedil;al <span class="acc">Touti</span></h1>
+        <p class="lede h-line he3">Chemist and discovery leader building the molecular linkages behind next-generation medicines, where oligonucleotide and conjugation chemistry meet targeted therapeutics.</p>
+        <div class="chips h-line he4">
+          <span class="chip">Oligonucleotide chemistry</span>
+          <span class="chip">Conjugation chemistry</span>
+          <span class="chip">Peptide therapeutics</span>
+          <span class="chip">Chemical biology</span>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <svg class="conjugate" viewBox="0 0 400 470" role="img" aria-label="Stylized antibody, linker, and oligonucleotide conjugate">
+          <!-- antibody Y -->
+          <g fill="none" stroke="var(--ink)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M200 122 L152 58"/>
+            <path d="M200 122 L248 58"/>
+            <path d="M200 122 L200 192"/>
+          </g>
+          <g fill="var(--paper)" stroke="var(--ink)" stroke-width="3.4">
+            <circle cx="152" cy="58" r="7"/>
+            <circle cx="248" cy="58" r="7"/>
+          </g>
+          <circle cx="200" cy="122" r="4.5" fill="var(--ink)"/>
+
+          <!-- linker -->
+          <line id="linker" x1="200" y1="192" x2="200" y2="240" stroke="var(--copper)" stroke-width="3" stroke-linecap="round"/>
+
+          <!-- conjugation node (click-chemistry triazole motif) -->
+          <circle id="pulse" cx="200" cy="250" r="13" fill="none" stroke="var(--copper)" stroke-width="2"/>
+          <path d="M200 240 L210 256 L190 256 Z" fill="none" stroke="var(--copper)" stroke-width="2.6" stroke-linejoin="round"/>
+          <circle cx="200" cy="250" r="3" fill="var(--copper)"/>
+
+          <!-- oligonucleotide double helix (built by script) -->
+          <g fill="none" stroke-linecap="round">
+            <g id="rungs" stroke="var(--copper)" stroke-width="2" opacity=".6"></g>
+            <path id="strandA" stroke="var(--teal-deep)" stroke-width="3.4"/>
+            <path id="strandB" stroke="var(--teal-soft)" stroke-width="3.4"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="flow">
+
+  <!-- METRICS -->
+  <section style="padding-top:14px">
+    <div class="wrap">
+      <div class="metrics reveal">
+        <div class="metric">
+          <span class="num">10<span class="small">+</span></span>
+          <span class="cap">Years advancing molecular therapeutics, from MIT bench to clinical pipeline</span>
+        </div>
+        <div class="metric">
+          <span class="num">3</span>
+          <span class="cap">Peer-reviewed papers across Nature Chem. Biol., JACS and PNAS</span>
+        </div>
+        <div class="metric">
+          <span class="num">1<span class="small">st</span></span>
+          <span class="cap">Author and corresponding author, Nature Chemical Biology</span>
+        </div>
+        <div class="metric">
+          <span class="num">MIT</span>
+          <span class="cap">Postdoctoral fellow and co-inventor of licensed discovery technology</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="wrap">
+      <div class="node-label"><span class="eyebrow">01 / Profile</span></div>
+      <div class="about-body reveal">
+        <p>Fay&ccedil;al Touti designs the chemistry that makes precision medicines possible, and leads the teams that carry it from idea to asset.</p>
+        <p>As <strong>Senior Director of Asset Discovery at Apellis Pharmaceuticals</strong> in Waltham, Massachusetts, he advances complement-targeted programs from molecular concept toward the clinic. His work sits at the meeting point of three modalities, oligonucleotides, bioconjugates, and peptides, and the chemistry that links them.</p>
+        <p>He began in peptide chemistry and chemical biology as a postdoctoral fellow in the <strong>Pentelute Lab at MIT</strong>, where his research on protein-protein interaction inhibitors and macrocyclic peptides appeared in Nature Chemical Biology, JACS, and PNAS. He carried that foundation into industry, through Servier, Dyne Therapeutics, Sunbird Bio, and now Apellis, building oligonucleotide and conjugation platforms that turn difficult targets into tractable programs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section>
+    <div class="wrap">
+      <div class="node-label"><span class="eyebrow">02 / What I do</span></div>
+      <div class="grid-exp reveal">
+        <div class="exp">
+          <span class="ix">A&middot;01</span>
+          <h3>Oligonucleotide Chemistry</h3>
+          <p>Antisense and RNA-targeting oligonucleotides designed for stability, delivery, and selectivity.</p>
+        </div>
+        <div class="exp">
+          <span class="ix">A&middot;02</span>
+          <h3>Conjugation Chemistry</h3>
+          <p>Antibody-oligonucleotide and bioconjugate design that routes a payload to the tissue that needs it.</p>
+        </div>
+        <div class="exp">
+          <span class="ix">A&middot;03</span>
+          <h3>Peptide Therapeutics</h3>
+          <p>Macrocyclization and non-canonical chemistry for high-affinity inhibitors of protein-protein interactions.</p>
+        </div>
+        <div class="exp">
+          <span class="ix">A&middot;04</span>
+          <h3>Asset &amp; Platform Discovery</h3>
+          <p>Moving molecules from concept to lead, and building the discovery engines around them.</p>
+        </div>
+        <div class="exp">
+          <span class="ix">A&middot;05</span>
+          <h3>Chemical Biology</h3>
+          <p>High-throughput, mass-spectrometry-driven screening and in-solution enrichment that surface real binders fast.</p>
+        </div>
+        <div class="exp">
+          <span class="ix">A&middot;06</span>
+          <h3>Scientific Leadership</h3>
+          <p>Leading cross-functional discovery teams across chemistry, biology, and DMPK.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section>
+    <div class="wrap">
+      <div class="node-label"><span class="eyebrow">03 / Trajectory</span></div>
+      <ul class="tl reveal">
+        <li class="now">
+          <span class="era">Now</span>
+          <span class="org">Apellis Pharmaceuticals</span>
+          <div class="role">Senior Director, Asset Discovery &middot; Waltham, MA</div>
+          <div class="note">Advancing complement (C3)-targeted programs from discovery toward the clinic. Previously Director of Oligonucleotide and Conjugation Chemistry.</div>
+        </li>
+        <li>
+          <span class="era">Industry</span>
+          <span class="org">Dyne Therapeutics</span>
+          <div class="role">Oligonucleotide &amp; Conjugation Chemistry</div>
+          <div class="note">Muscle-targeting antibody-oligonucleotide conjugates for neuromuscular disease.</div>
+        </li>
+        <li>
+          <span class="era">Industry</span>
+          <span class="org">Sunbird Bio</span>
+          <div class="role">Discovery Research</div>
+          <div class="note">Translational science toward blood-based diagnostics for neurological disease.</div>
+        </li>
+        <li>
+          <span class="era">2018</span>
+          <span class="org">Servier</span>
+          <div class="role">Postdoctoral Scientist</div>
+          <div class="note">Therapeutic chemistry research within a global pharmaceutical group.</div>
+        </li>
+        <li>
+          <span class="era">2014 &ndash; 2018</span>
+          <span class="org">MIT &middot; Pentelute Lab</span>
+          <div class="role">Postdoctoral Fellow, Department of Chemistry</div>
+          <div class="note">Peptide chemistry and chemical biology. Protein-protein interaction inhibitors and macrocyclic peptides, with affiliations at the Koch and Broad Institutes.</div>
+        </li>
+        <li>
+          <span class="era">Foundation</span>
+          <span class="org">&Eacute;cole normale sup&eacute;rieure de Lyon</span>
+          <div class="role">BSc &amp; MSc, Chemistry</div>
+          <div class="note">Graduate training at one of France's most selective scientific institutions.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section>
+    <div class="wrap">
+      <div class="node-label"><span class="eyebrow">04 / Selected publications</span></div>
+      <div class="pubs reveal">
+        <a class="pub" href="https://doi.org/10.1038/s41589-019-0245-2" target="_blank" rel="noopener">
+          <span class="venue">Nature Chemical Biology &middot; 2019</span>
+          <span class="ttl">In-solution enrichment identifies peptide inhibitors of protein-protein interactions <span class="tag">First &amp; corresponding author</span></span>
+          <span class="meta">Touti F., Gates Z. P., Bandyopadhyay A., Lautrette G., Pentelute B. L. &middot; 15(4), 410&ndash;418 &nbsp;<span class="arrow">&rarr;</span></span>
+        </a>
+        <a class="pub" href="https://doi.org/10.1021/jacs.6b03757" target="_blank" rel="noopener">
+          <span class="venue">Journal of the American Chemical Society &middot; 2016</span>
+          <span class="ttl">Nitrogen Arylation for Macrocyclization of Unprotected Peptides</span>
+          <span class="meta">Lautrette G., Touti F., Lee H. G., Dai P., Pentelute B. L. &middot; 138(27), 8340&ndash;8343 &nbsp;<span class="arrow">&rarr;</span></span>
+        </a>
+        <a class="pub" href="https://doi.org/10.1073/pnas.1722633115" target="_blank" rel="noopener">
+          <span class="venue">PNAS &middot; 2018</span>
+          <span class="ttl">Xenoprotein engineering via synthetic libraries</span>
+          <span class="meta">Gates Z. P. et al. (incl. Touti F.), Jamison T. F., Pentelute B. L. &middot; 115(23), E5298&ndash;E5306 &nbsp;<span class="arrow">&rarr;</span></span>
+        </a>
+      </div>
+      <div class="recog reveal d1">
+        <span>Invited speaker, Oligonucleotides for CNS Summit, Boston (2025 &amp; 2026)</span>
+        <span>Co-inventor of MIT-licensed peptide discovery technology</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="wrap">
+      <div class="contact reveal">
+        <div class="c-glow" aria-hidden="true"></div>
+        <div class="contact-inner">
+          <span class="eyebrow">05 / Get in touch</span>
+          <h2>Let's build something <em>precise.</em></h2>
+          <p>Open to discovery leadership, scientific advisory, and collaboration across oligonucleotide, conjugate, and peptide programs.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:hello@example.com">Email Fay &rarr;</a>
+            <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-ghost" href="https://scholar.google.com/citations?user=JIlGkDMAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span class="nm">Fay&ccedil;al Touti</span>
+      <span class="loc">Boston &middot; Cambridge &middot; Waltham, MA</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Build the oligonucleotide double helix precisely
+  (function(){
+    var cx=200, top=266, bottom=440, amp=32, turns=2.35, steps=64;
+    var A=[], B=[];
+    for(var i=0;i<=steps;i++){
+      var t=i/steps;
+      var y=top+(bottom-top)*t;
+      var ph=t*turns*2*Math.PI;
+      A.push([ (cx+amp*Math.sin(ph)).toFixed(1), y.toFixed(1) ]);
+      B.push([ (cx+amp*Math.sin(ph+Math.PI)).toFixed(1), y.toFixed(1) ]);
+    }
+    function d(p){return "M"+p.map(function(q){return q[0]+" "+q[1];}).join(" L");}
+    document.getElementById("strandA").setAttribute("d", d(A));
+    document.getElementById("strandB").setAttribute("d", d(B));
+    var rungs="";
+    for(var j=3;j<=steps-3;j+=8){
+      rungs+='<line x1="'+A[j][0]+'" y1="'+A[j][1]+'" x2="'+B[j][0]+'" y2="'+B[j][1]+'"/>';
+    }
+    document.getElementById("rungs").innerHTML=rungs;
+  })();
+
+  // Scroll reveals
+  (function(){
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var els = document.querySelectorAll(".reveal");
+    if(reduce || !("IntersectionObserver" in window)){
+      els.forEach(function(e){e.classList.add("in");});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, {threshold:.16, rootMargin:"0px 0px -8% 0px"});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+</body>
+</html>
